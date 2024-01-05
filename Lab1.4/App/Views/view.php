@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Lab 1.3 </title>
+    <title>Lab 1.4 Order Information</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,17 +31,35 @@
         </div>
     </div>
 </nav>
-<?php
-$firstName = isset($user['firstname']) ? $user['firstname'] : 'First name';
-$lastName = isset($user['lastname']) ? $user['lastname'] : 'Lastname';
-echo ('PC06839 -Lab1.3 <br>');
-?>
-<h2>Email lấy làm mẫu 'user1@example.com'</h2>
-<?=$firstName . ' ' . $lastName;?>
-  <form  method="post">
-    <input type="email" name='email'>
-    <button type="submit">Xác nhận email</button>
-  </form>
-   
+PC06839 
+<div class="container mt-5">
+    <h2>Order Information</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Customer Email</th>
+                <th>Order Date</th>
+                <th>Total Amount</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($orders as $order): ?>
+                <tr>
+                    <td><?= $order['order_id'] ?></td>
+                    <td><?= $order['customer_name'] ?></td>
+                    <td><?= $order['customer_email'] ?></td>
+                    <td><?= $order['order_date'] ?></td>
+                    <td><?= $order['total_amount'] ?></td>
+                    <td><?= $order['order_status'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
