@@ -1,0 +1,16 @@
+{
+    "name": "php/oop",
+    "description": "Object Oriented Programming in PHP",
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    },
+    "authors": [
+      {
+        "name": "Nhanpro385",
+        "email": "nhanpro385@gmail.com"
+      }
+    ],
+    "require": {}
+  }
